@@ -3,11 +3,13 @@ Die rOne;
 void setup()
 {
     noLoop();
+    size(500,500);
 }
 void draw()
 {    
-  background(255,0,0);
+  background(255);
   rOne = new Die(250,250);
+  rOne.show();
     //your code here
 }
 void mousePressed()
@@ -25,33 +27,13 @@ class Die //models one single dice cube
        
         //variable initializations here
     }
-    void roll()
-    {
-        if((int)(Math.random()*7 <=1 ))
-            rollNum = 1;
-            
-         else if ((int)(Math.random()*7 <= 2))
-             rollNum = 2;
-             
-         else if((int)(Math.random()*7 <= 3))
-             rollNum =3;
-             
-         else if((int)(Math.random()*7 <= 4))
-            rollNum = 4;
-          
-         else if((int)(Math.random()*7 <=5))
-            rollNum = 5;
-          
-         else rollNum = 6;
-          
-            
-        
-        
+    void roll(){
+    rollNum = (int)(Math.random()*6 +1);  
         //your code here
     }
     void show()
     {
-      rect(myX,myY,50,50,50);
+      rect(203,210,100,100,20);
       fill(0);
       if(rollNum == 1){
         ellipse(250,250,10,10);
@@ -70,6 +52,22 @@ class Die //models one single dice cube
         ellipse(265,265,10,10);
         ellipse(235,245,10,10);
         ellipse(235,265,10,10);
+      }
+      else if(rollNum ==5){
+        ellipse(250,250,10,10);
+        ellipse(265,245,10,10);
+        ellipse(265,265,10,10);
+        ellipse(235,245,10,10);
+        ellipse(235,265,10,10);
+      }
+      else {
+        ellipse(275,235,10,10);
+        ellipse(275,255,10,10);
+        ellipse(275,275,10,10);
+        ellipse(225,235,10,10);
+        ellipse(225,255,10,10);
+        ellipse(225,275,10,10);
+        
       }
       
         
